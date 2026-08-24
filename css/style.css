@@ -10,6 +10,7 @@
   --offwhite: #ECF0F1;
   --gray: #4F4C50;
   --white: #FFFFFF;
+  --pink: #fc0fc0;
 
   /* --font-display: "Oswald", sans-serif;
   --font-body: "Work Sans", sans-serif;
@@ -133,7 +134,7 @@ p { margin: 0; }
   justify-content: space-between;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand img { height: 44px; width: auto; }
+.brand img { height: 60px; width: auto; }
 .brand-text {
   font-family: var(--font-display);
   font-weight: 600;
@@ -553,3 +554,9 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+/* span.brand-text-pink{
+  color: var(--pink);
+}
+span.brand-text-navy{
+  color: var(--navy);
+} */
