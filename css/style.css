@@ -1,6 +1,8 @@
 /* ==========================================================================
-   TNA Courier Services- Design Tokens
+   TNA CS- Design
    ========================================================================== */
+   /* Design and mainted by Jinal */
+   /* Contact me on Github: https://github.com/JinalPatel17  */
 :root {
   --navy: #033045;
   --charcoal: #1B1A1C;
@@ -554,6 +556,7 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+
 /* span.brand-text-pink{
   color: var(--pink);
 }
