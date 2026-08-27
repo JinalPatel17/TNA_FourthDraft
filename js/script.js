@@ -71,4 +71,4 @@
     sections.forEach((s) => observer.observe(s));
   }
 })();
-// Desing and mainted by Jinal
+// Desing and Maintained by Jinal

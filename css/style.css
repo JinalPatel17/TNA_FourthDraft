@@ -1,7 +1,7 @@
 /* ==========================================================================
    TNA CS- Design
    ========================================================================== */
-   /* Design and mainted by Jinal */
+   /* Design and Maintained by Jinal */
    /* Contact me on Github: https://github.com/JinalPatel17  */
 :root {
   --navy: #033045;
@@ -13,6 +13,7 @@
   --gray: #4F4C50;
   --white: #FFFFFF;
   --pink: #fc0fc0;
+  --brand-pink: #f7559a;
 
   /* --font-display: "Oswald", sans-serif;
   --font-body: "Work Sans", sans-serif;
@@ -107,8 +108,26 @@ p { margin: 0; }
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .site-header.is-scrolled {
-  background: var(--white);
-  box-shadow: 0 2px 16px rgba(3, 48, 69, 0.08);
+  /* Semi-transparent white background so the blur shows through */
+  background: rgba(255, 255, 255, 0.85);
+
+  /* Frosted glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+
+  /* A lighter, softer shadow for a cleaner modern look */
+  box-shadow: 0 4px 30px rgba(3, 48, 69, 0.06);
+
+  /* A very faint border that mimics a sleek hardware edge */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Fallback for browsers without backdrop-filter support - avoid a messy
+   half-transparent bar with no blur to soften it */
+@supports not (backdrop-filter: blur(1px)) {
+  .site-header.is-scrolled {
+    background: var(--white);
+  }
 }
 .site-header.is-hidden { transform: translateY(-100%); }
 
@@ -147,6 +166,7 @@ p { margin: 0; }
   line-height: 1.1;
 }
 .brand-text span { display: block; font-size: 0.65rem; color: var(--blue); letter-spacing: 0.15em; }
+.brand-text .brand-accent { display: inline; font-size: 1.05rem; color: var(--brand-pink); }
 
 .nav-links {
   display: flex;
@@ -524,7 +544,7 @@ p { margin: 0; }
   margin-bottom: 40px;
 }
 .footer-brand .brand-text { color: var(--white); }
-.footer-brand .brand-text span { color: var(--blue-light); }
+/* .footer-brand .brand-text span { color: var(--blue-light); } */
 .footer-brand p { margin-top: 14px; color: #9C9B9D; font-size: 0.92rem; max-width: 34ch; }
 .site-footer h4 {
   color: var(--white);
@@ -539,11 +559,17 @@ p { margin: 0; }
   padding-top: 22px;
   font-size: 0.82rem;
   color: #7C7B7D;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  /* display: flex;
+  justify-content: space-between; 
+  flex-wrap: wrap;*/
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   gap: 10px;
 }
+.footer-bottom > :first-child { justify-self: start; text-align: left; }
+.footer-bottom > :nth-child(2) { justify-self: center; text-align: center; }
+.footer-bottom > :last-child { justify-self: end; text-align: right; }
 @media (max-width: 760px) {
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
@@ -562,4 +588,18 @@ p { margin: 0; }
 }
 span.brand-text-navy{
   color: var(--navy);
+  
+  =============================
+  Need to remove this
+  .footer-brand .brand-text span
+Specificity: (0,2,1)
+ {
+    /* color: var(--blue-light);
+    ==== 
+    so this can work.brand-text 
+    ====
+    .brand-accent {
+    display: inline;
+    color: var(--brand-pink);
+    ===
 } */
